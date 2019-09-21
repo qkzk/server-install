@@ -1,0 +1,10 @@
+---
+- hosts: qnas
+  remote_user: quentin
+
+  tasks:
+  - name: 'systemclt status motioneye.service' on Qnas
+    shell: systemctl status motioneye.service
+    register: command_result
+    failed_when: "'active (running)' not in command_result.stdout"
+    become: yes

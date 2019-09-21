@@ -1,0 +1,13 @@
+---
+- hosts: rpi
+  remote_user: pi
+
+  tasks:
+  - name: install htop for all Raspberry pi
+    apt:
+      update_cache=yes
+      state=latest
+      name={{item}}
+    with_items:
+      - htop
+    become: yes

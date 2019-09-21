@@ -1,0 +1,10 @@
+---
+- hosts: emby
+  remote_user: quentin
+
+  tasks:
+  - name: docker ps on embt
+    shell: docker ps
+    register: command_result
+    failed_when: "'Up' not in command_result.stdout"
+    become: yes

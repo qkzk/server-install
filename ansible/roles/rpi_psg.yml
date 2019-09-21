@@ -1,0 +1,9 @@
+---
+- hosts: rpi
+  remote_user: pi
+
+  tasks:
+  - name: psg on all rpi
+    shell: ps -ef | grep python
+    register: command_result
+    failed_when: "'/home/pi' not in command_result.stdout"
