@@ -10,6 +10,17 @@ Sous arch / manjaro : dans pamac j'ai tout installé sauf 3 trucs
 * python-ovirt-engine-sdk: trucs pour la virtualisation avec redhat, j'ai rien compris
 * python-boto3: aws_s3 module
 
+## tester l'installation
+
+~~~sh
+ansible --version
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/home/quentin/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 3.7.4 (default, Jul 16 2019, 07:12:58) [GCC 9.1.0]
+~~~
+
 ## Echec de l'installation
 
 si l'installation foire parce que des librairies Python sont déjà là faut les virer
@@ -42,6 +53,24 @@ xargs rm -rfv <fichiers_relous.txt
 * [tuto youtube](https://www.youtube.com/playlist?list=PLFiccIuLB0OiWh7cbryhCaGPoqjQ62NpU)
 
 # Configurer
+
+## Les hosts
+
+Ansible utilise une liste de machines pour communiquer
+Il est préférable de se logguer directement sur les machines.
+
+Pour ça il faut configurer correctement le fichier hosts
+
+Exemple : [hosts](hosts)
+
+Ensuite on doit configurer ssh
+
+Pour chaque machine : [ssh login without password](http://www.linuxproblem.org/art_9.html)
+
+Attention aux permissions sur les fichiers, bien s'assurer que personne ne peut les lire (`chmod 600 hosts`)
+
+
+## Ansible
 
 **Dans /etc/ansible/ansible.cfg**
 
