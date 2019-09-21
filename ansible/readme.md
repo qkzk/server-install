@@ -43,7 +43,7 @@ xargs rm -rfv <fichiers_relous.txt
 
 # Configurer
 
-Dans /etc/ansible/ansible.cfg
+**Dans /etc/ansible/ansible.cfg**
 
 2 choses à éditer :
 
@@ -61,16 +61,24 @@ ansible -m ping all --one-line
 # uptime
 
 # les rpi
+~~~sh
 ansible rpi -m command --args "uptime" --one-line
+~~~
 
 # tout le monde
+~~~ sh
 ansible all -m command --args "uptime" --one-line
+~~~
 
 # Utiliser un recipe :
 
 ## Recipe user normal
+~~~sh
 ansible-playbook /home/quentin/gdrive/dev/linux-misc/ansible/roles/qnas_motion.yml
+~~~
 
 ## Recipe sudo
+~~~sh
 ansible-playbook /home/quentin/gdrive/dev/linux-misc/ansible/roles/qnas_motion.yml --ask-become-pass
 ansible-playbook ~/gdrive/dev/linux-misc/ansible/roles/emby_docker_ps.yml --ask-become-pass
+~~~
