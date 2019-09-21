@@ -32,14 +32,14 @@ xargs rm -rfv <fichiers_relous.txt
 
 **Sources**
 
-[manjaro forum](https://forum.manjaro.org/t/failed-to-commit-transaction-due-to-python-conflict/49818)
-[stack overflow](https://stackoverflow.com/a/21301892)
+* [manjaro forum](https://forum.manjaro.org/t/failed-to-commit-transaction-due-to-python-conflict/49818)
+* [stack overflow](https://stackoverflow.com/a/21301892)
 
 # Documentation
 
-[debuter](https://linuxfr.org/users/skhaen/journaux/deploiement-et-automatisation-avec-ansible-partie-1)
-[documentation officielle](https://docs.ansible.com/)
-[tuto youtube](https://www.youtube.com/playlist?list=PLFiccIuLB0OiWh7cbryhCaGPoqjQ62NpU)
+* [debuter](https://linuxfr.org/users/skhaen/journaux/deploiement-et-automatisation-avec-ansible-partie-1)
+* [documentation officielle](https://docs.ansible.com/)
+* [tuto youtube](https://www.youtube.com/playlist?list=PLFiccIuLB0OiWh7cbryhCaGPoqjQ62NpU)
 
 # Configurer
 
@@ -67,6 +67,10 @@ ansible rpi -m command --args "uptime" --one-line
 ansible all -m command --args "uptime" --one-line
 
 # Utiliser un recipe :
+
+## Recipe user normal
 ansible-playbook /home/quentin/gdrive/dev/linux-misc/ansible/roles/qnas_motion.yml
+
+## Recipe sudo
 ansible-playbook /home/quentin/gdrive/dev/linux-misc/ansible/roles/qnas_motion.yml --ask-become-pass
 ansible-playbook ~/gdrive/dev/linux-misc/ansible/roles/emby_docker_ps.yml --ask-become-pass
