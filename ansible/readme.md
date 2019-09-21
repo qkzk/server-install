@@ -55,10 +55,14 @@ xargs rm -rfv <fichiers_relous.txt
 ## ping
 
 ### les rpi
+~~~sh
 ansible -m ping rpi --one-line
+~~~
 
 ### Tout le monde
+~~~sh
 ansible -m ping all --one-line
+~~~
 
 ## uptime
 
