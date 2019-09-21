@@ -50,34 +50,36 @@ xargs rm -rfv <fichiers_relous.txt
 * `inventory      = /home/quentin/gdrive/dev/linux-misc/ansible/hosts`
 * `roles_path    = /home/quentin/gdrive/dev/linux-misc/ansible/roles`
 
-# ping
+# Quelques commandes
 
-## les rpi
+## ping
+
+### les rpi
 ansible -m ping rpi --one-line
 
-## Tout le monde
+### Tout le monde
 ansible -m ping all --one-line
 
-# uptime
+## uptime
 
-# les rpi
+### les rpi
 ~~~sh
 ansible rpi -m command --args "uptime" --one-line
 ~~~
 
-# tout le monde
+## tout le monde
 ~~~ sh
 ansible all -m command --args "uptime" --one-line
 ~~~
 
-# Utiliser un recipe :
+## Utiliser un recipe :
 
-## Recipe user normal
+### Recipe user normal
 ~~~sh
 ansible-playbook /home/quentin/gdrive/dev/linux-misc/ansible/roles/qnas_motion.yml
 ~~~
 
-## Recipe sudo
+### Recipe sudo
 ~~~sh
 ansible-playbook /home/quentin/gdrive/dev/linux-misc/ansible/roles/qnas_motion.yml --ask-become-pass
 ansible-playbook ~/gdrive/dev/linux-misc/ansible/roles/emby_docker_ps.yml --ask-become-pass
