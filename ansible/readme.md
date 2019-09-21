@@ -13,7 +13,7 @@ Sous arch / manjaro : dans pamac j'ai tout installé sauf 3 trucs
 ## tester l'installation
 
 ~~~sh
-ansible --version
+$ ansible --version
   config file = /etc/ansible/ansible.cfg
   configured module search path = ['/home/quentin/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
   ansible python module location = /usr/lib/python3.7/site-packages/ansible
@@ -52,6 +52,7 @@ xargs rm -rfv <fichiers_relous.txt
 * [documentation officielle](https://docs.ansible.com/)
 * [tuto youtube](https://www.youtube.com/playlist?list=PLFiccIuLB0OiWh7cbryhCaGPoqjQ62NpU)
 
+
 # Configurer
 
 ## Les hosts
@@ -70,7 +71,7 @@ Pour chaque machine : [ssh login without password](http://www.linuxproblem.org/a
 Attention aux permissions sur les fichiers, bien s'assurer que personne ne peut les lire (`chmod 600 hosts`)
 
 
-## Ansible
+## Configuration d'Ansible
 
 **Dans /etc/ansible/ansible.cfg**
 
@@ -81,39 +82,66 @@ Attention aux permissions sur les fichiers, bien s'assurer que personne ne peut 
 
 # Quelques commandes
 
+
+## [Ad-hocs commands](https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html#intro-adhoc)
+
+Ce sont les commandes passées directement. Elles n'utilisent pas ed playbook
+
+Un exemple :
+
+**[déployer un fichier sur toutes les machines](https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html#file-transfer)**
+
+~~~sh
+$ ansible atlanta -m copy -a "src=/etc/hosts dest=/tmp/hosts"
+~~~
+
 ## ping
 
 ### les rpi
 ~~~sh
-ansible -m ping rpi --one-line
+$ ansible -m ping rpi --one-line
 ~~~
 
 ### Tout le monde
 ~~~sh
-ansible -m ping all --one-line
+$ ansible -m ping all --one-line
 ~~~
 
 ## uptime
 
 ### les rpi
 ~~~sh
-ansible rpi -m command --args "uptime" --one-line
+$ ansible rpi -m command --args "uptime" --one-line
 ~~~
 
-## tout le monde
-~~~ sh
-ansible all -m command --args "uptime" --one-line
+### tout le monde
+~~~sh
+$ ansible all -m command --args "uptime" --one-line
 ~~~
+
+## psg
+~~~sh
+$ ansible all -m shell -a "ps -ef | grep python"
+~~~
+
+## Service
+
+Lancé ?
+
+~~~sh
+$ ansible qnas -m service -a "name=motioneye.service state=started"
+~~~
+
 
 ## Utiliser un recipe :
 
 ### Recipe user normal
 ~~~sh
-ansible-playbook /home/quentin/gdrive/dev/linux-misc/ansible/roles/qnas_motion.yml
+$ ansible-playbook /home/quentin/gdrive/dev/linux-misc/ansible/roles/qnas_motion.yml
 ~~~
 
 ### Recipe sudo
 ~~~sh
-ansible-playbook /home/quentin/gdrive/dev/linux-misc/ansible/roles/qnas_motion.yml --ask-become-pass
-ansible-playbook ~/gdrive/dev/linux-misc/ansible/roles/emby_docker_ps.yml --ask-become-pass
+$ ansible-playbook /home/quentin/gdrive/dev/linux-misc/ansible/roles/qnas_motion.yml --ask-become-pass
+$ ansible-playbook ~/gdrive/dev/linux-misc/ansible/roles/emby_docker_ps.yml --ask-become-pass
 ~~~
