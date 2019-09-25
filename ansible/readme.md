@@ -70,6 +70,19 @@ Pour chaque machine : [ssh login without password](http://www.linuxproblem.org/a
 
 Attention aux permissions sur les fichiers, bien s'assurer que personne ne peut les lire (`chmod 600 hosts`)
 
+Enfin il faut modifier le fichier `.ssh/config`
+
+Exemple :
+
+~~~sh
+Host retropie
+	HostName retropie
+	User pi
+	IdentityFile /home/quentin/.ssh/id_rsa
+~~~
+
+Et ainsi de suite pour chaque host sur lequel on souhaite se logguer.
+
 
 ## Configuration d'Ansible
 
