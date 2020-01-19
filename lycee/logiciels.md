@@ -43,5 +43,5 @@
 
 ## Réseau
 
-* packettracer (gros borldel)
-* wireshark
+11. packettracer (gros borldel)
+12. wireshark
