@@ -3,7 +3,7 @@
 1. Ouvrir une commande en mode admin
 
   ~~~bash
-  python -m pip install --proxy http://172.16.0.253:9999 pgzero
+  python3 -m pip install --proxy http://172.16.0.253:9999 pgzero
   ~~~
 
 # Travailler au lycée
