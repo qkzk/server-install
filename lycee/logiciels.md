@@ -22,7 +22,11 @@
 
 ## retouche
 
-8. [krita](https://download.kde.org/stable/krita/) ???
+8. [krita](https://download.kde.org/stable/krita/) pas gratuit sous windows ?
+
+## sqlite
+
+9. [sqlitebrowser](https://sqlitebrowser.org/dl/)
 
 ## extensions
 
