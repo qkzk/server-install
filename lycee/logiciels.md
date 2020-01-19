@@ -30,7 +30,8 @@
 
 ## extensions
 
-9. atom
+10. atom
+
   * autocomplete-python
   * atom-jinja2
   * minimap
@@ -39,3 +40,8 @@
   * python-autopep8
   * language-markdown
   * bracket-colorizer
+
+## Réseau
+
+* packettracer (gros borldel)
+* wireshark
