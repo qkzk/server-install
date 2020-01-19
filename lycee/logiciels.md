@@ -17,7 +17,8 @@
 
 ## Langages
 
-7. python3
+7. python3\
+    et ses [paquets](requirements.txt)
 
 ## retouche
 

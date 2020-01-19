@@ -1,3 +1,11 @@
+# Tester python et pip avec
+
+1. Ouvrir une commande en mode admin
+
+  ~~~bash
+  python -m pip install --proxy http://172.16.0.253:9999 pgzero
+  ~~~
+
 # Travailler au lycée
 
 1. [salle 213](213.md) : configuration propre à la salle
