@@ -11,3 +11,11 @@
 9. graphviz
 10. guizero
 11. Jinja2
+
+utiliser un requirements ?
+
+# Installer un environnement virtuel
+
+j'ai oublié (revoir mail à V.D. et J.K. sept/oct 2019)
+
+#

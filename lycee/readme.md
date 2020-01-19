@@ -1,4 +1,4 @@
-# Travailler sur le réseau du lycée
+# Travailler au lycée
 
 1. [salle 213](213.md) : configuration propre à la salle
 2. [kwartz](kwartz.md) : travailler sur kwartz
