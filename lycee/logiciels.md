@@ -5,32 +5,33 @@
 1. chrome (récupérer le setup)
 2. firefox
 
-## FTP
+## Utils
 
-3. filezilla
+3. git
+4. filezilla
 
 ## Editeurs
 
-4. [sublime text 3](https://www.sublimetext.com/3)
+5. [sublime text 3](https://www.sublimetext.com/3)
 5. [atom](https://atom.io)
 6. [thonny](https://github.com/thonny/thonny/releases/download/v3.2.6/thonny-3.2.6.exe)
 
 ## Langages
 
-7. python3\
+8. python3\
     et ses [paquets](requirements.txt)
 
 ## retouche
 
-8. [krita](https://download.kde.org/stable/krita/) pas gratuit sous windows ?
+9. [krita](https://download.kde.org/stable/krita/) pas gratuit sous windows ?
 
 ## sqlite
 
-9. [sqlitebrowser](https://sqlitebrowser.org/dl/)
+10. [sqlitebrowser](https://sqlitebrowser.org/dl/)
 
 ## extensions
 
-10. atom
+11. atom
 
   * autocomplete-python
   * atom-jinja2
@@ -43,5 +44,5 @@
 
 ## Réseau
 
-11. packettracer (gros borldel)
 12. wireshark
+13. packettracer (gros borldel)
