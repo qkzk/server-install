@@ -1,5 +1,6 @@
 # Travailler sur le réseau du lycée
 
-1. [salle 213](213.md)
-2. [kwartz](kwartz.md)
-3. [proxy](proxy.md)
+1. [salle 213](213.md) : configuration propre à la salle
+2. [kwartz](kwartz.md) : travailler sur kwartz
+3. [proxy](proxy.md) : le proxy du lycée
+4. [python](python.md) : les paquets dont j'ai besoin
