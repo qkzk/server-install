@@ -12,10 +12,13 @@
 10. guizero
 11. Jinja2
 
-utiliser un requirements ?
+~~~
+$ pip install -r requirements.txt
+~~~
+
 
 # Installer un environnement virtuel
 
 j'ai oublié (revoir mail à V.D. et J.K. sept/oct 2019)
 
-#
+# ???
