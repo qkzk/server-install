@@ -15,7 +15,7 @@ Ce tutoriel vise à installer Mattermost avec **DOCKER** il ne s'applique qu'à
 cette méthode.
 
 Le container Docker fourni par mattermost intègre déjà NGINX, il est donc
-inutile d'installer docker par dessus.
+inutile d'installer nginx par dessus.
 
 ## Maintenance
 
@@ -51,7 +51,17 @@ Il suffit de le suivre jusqu'au bout.
 
 **Remarque** c'est `--standalone` avec **2** tirets
 
-**Validité des certificats** : Attention les certificats ne sont valables qu'un mois. Il faut les renouveler
+**Validité des certificats** : Attention les certificats ne sont valables qu'un mois. Il faut les [renouveler](https://community.letsencrypt.org/t/how-to-automatically-renew-certificates/4393)
+
+> You can also add that command to your crontab:
+>
+> `$ sudo crontab -e`
+>
+> ```bash
+> # Add this to the crontab and save it:
+> * 7,19 * * * certbot -q renew
+> ```
+
 
 
 ## email
