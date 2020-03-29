@@ -11,14 +11,21 @@ Mattermost est une alternative à Slack. Il peut aussi servir d'alternative
 à discord
 
 
-Ce tutoriel vise à installer Mattermost **DOCKER** il ne s'applique qu'à
+Ce tutoriel vise à installer Mattermost avec **DOCKER** il ne s'applique qu'à
 cette méthode.
 
 Le container Docker fourni par mattermost intègre déjà NGINX, il est donc
 inutile d'installer docker par dessus.
 
-## Configuration
+## Maintenance
 
+Se fait entièrement via **docker-compose**
+
+* arrêter avec `$ docker-compose stop`
+* relancer avec `$ docker-compose up -d` (detach)
+* statut avec `$ docker-compose ps` et `docker-compose network ls`
+
+## Machine
 
 * Machine virtuelle sous virtual box avec debian 9
 * docker
@@ -40,7 +47,12 @@ Il faut penser à copier les bons fichiers au bon endroit
 
 Le post [qui m'a sauvé](https://forum.mattermost.org/t/mattermost-recipe-using-lets-encrypt-for-tls-certificates-with-mattermost-docker/7596)
 
-**Remarque** c'est `--standalone` avec 2 tirets
+Il suffit de le suivre jusqu'au bout.
+
+**Remarque** c'est `--standalone` avec **2** tirets
+
+**Validité des certificats** : Attention les certificats ne sont valables qu'un mois. Il faut les renouveler
+
 
 ## email
 
@@ -51,7 +63,7 @@ Les emails servent essentiellement à la réinitialisation des MDP
 
 **steps**
 
-1. choisir une adresse email@gmail, paramètres du compte, donner un mot de passe d'application
+1. choisir une adresse `email@gmail`, paramètres du compte, donner un mot de passe d'application
 2. configurer avec :
 
   * `smtp.gmail.com`
