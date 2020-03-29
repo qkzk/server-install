@@ -19,7 +19,11 @@ pour la rentrée 2020
 
 ## clé bootable
 
+[freeduc jbart](https://usb.freeduc.org/freeduc-usb/freeduc-jbart/index.fr.html)
+
 * s'il est impossible d'avoir une salle linux ???
 * sinon
   * 1 par élève + 1 fournée d'avance
   * 35 en première, 14 en terminale => 70 clés (lol)
+
+* réaliser plusieurs clés en même temps ? ? ? utiliser tous les postes du lycée ???
