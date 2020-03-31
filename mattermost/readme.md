@@ -160,6 +160,28 @@ Les emails servent essentiellement à la réinitialisation des MDP
 
   * activer le rendu latex : **`oui`** :) yeah
 
+## Plugins
+
+Le plugin de mes rèves doit pouvoir :
+
+* partager facilement un écran,
+* caster,
+* fonctionner facilement sur mobile et l'ordi
+* être simple d'usage
+
+### Essais
+
+1. **Jitsi**
+
+  * **installation:** se rendre sur leur site, dl la release et activer les plugins dans
+      les menus. Décompressez avec `tar xvf ...` et copier le dossier dans :
+      `dossier mattermost/volumes/app/mattermost/plugins`
+  * relancer le serveur `docker-compose stop` puis `docker-compose up -d`
+  * **lancer un jitsi** avec `/jitsi [nom du canal]`, activer les partages.
+      Un même client peut rejoindre plusieurs fois pour tester. Ça fonctionne comme discord, il faut virer un écran avant de caster.
+
+  Pour l'instant très satisfaisant.
+
 ## Source
 
 Merci MM pour m'avoir lancé là dessus :)
