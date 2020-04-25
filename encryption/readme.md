@@ -4,6 +4,12 @@ La procédure suivante vise à créer une partition non root entièrement encryp
 
 Elle s'inspire d'[archwiki](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_a_non-root_file_system)
 
+À la fin on obtient :
+
+1. un disque complètement encrypté
+2. un point de montage pour ce disque
+3. une commande pour ouvrir ou fermer ce disque
+
 ## Étapes
 
 1. préparer la partition en question.
