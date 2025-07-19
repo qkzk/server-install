@@ -256,5 +256,17 @@ unused devices: <none>
 
 1000 mins = 19h
 
+devrait être fini vers 11h dimanche
+
+## Améliorer le raid 
+
+Une fois l'ajout terminé,
+
+1. commander trois autres disques,
+2. retirer et ajouter un par un.
+3. étendre le raid
+
+Devrait prendre 3x1000m = 3000m = 54h = ~3 jours
+
 
 
