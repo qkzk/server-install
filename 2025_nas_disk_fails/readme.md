@@ -268,5 +268,9 @@ Une fois l'ajout terminé,
 
 Devrait prendre 3x1000m = 3000m = 54h = ~3 jours
 
+## Et ça fonctionne.
+
+Tout semble okay.
+
 
 
