@@ -273,4 +273,37 @@ Devrait prendre 3x1000m = 3000m = 54h = ~3 jours
 Tout semble okay.
 
 
+## Autres disques 
 
+4. port 4: WD30EFRX-68EUZN0 WCC4N0FVSTDL -> /dev/sde
+
+remplacé par ... ST6000VN006-2ZM1 - WPR03GWY -> /dev/sde
+
+```sh 
+ $ sudo parted -a optimal /dev/sde
+GNU Parted 3.5
+Using /dev/sde
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+(parted) mklabel gpt
+(parted) mkpart primary 1 -1
+(parted) set 1 raid on
+(parted) print
+Model: ATA ST6000VN006-2ZM1 (scsi)
+Disk /dev/sde: 6001GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+Disk Flags:
+
+Number  Start   End     Size    File system  Name     Flags
+ 1      1049kB  6001GB  6001GB               primary  raid
+
+(parted) quit
+Information: You may need to update /etc/fstab.
+```
+
+puis 
+
+```sh 
+$ sudo lsblk /dev/sde 
+$ sudo mdadm --manage --add /dev/md127 /dev/sde1
+```
