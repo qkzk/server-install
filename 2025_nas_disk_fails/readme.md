@@ -8,6 +8,17 @@ geometry: "margin=1.5cm"
 
 ---
 
+## Résultat
+
+Nouveaux disques de gauche à droite :
+
+1. /dev/sdf1 : ST6000VN006 - ZVX063KJ 
+2. /dev/sdb1 : ST6000VN006 - ZVY08NE7
+3. /dev/sdc1 
+4. /dev/sde1 : ST6000VN006-2ZM1 - WPR03GWY
+
+Tous des Seagate ironwolf 6To achetés en 2025
+
 ## Historique 
 
 Depuis 3 mois j'ai 5 erreurs rapportées par smartctrl
@@ -307,3 +318,39 @@ puis
 $ sudo lsblk /dev/sde 
 $ sudo mdadm --manage --add /dev/md127 /dev/sde1
 ```
+
+2. port 2: WD30EFRX-68EUZN0 WCC4N3LHT3D8 -> /dev/sdb
+
+remplacé par ST6000VN006 - ZVY08NE7
+
+
+
+```bash 
+$ sudo parted -a optimal /dev/sdb
+GNU Parted 3.5
+Using /dev/sdb
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+(parted) mklabel gpt
+(parted) mkpart primary 1 -1
+(parted) set 1 raid on
+(parted) print
+Model: ATA ST6000VN006-2ZM1 (scsi)
+Disk /dev/sdb: 6001GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+Disk Flags:
+
+Number  Start   End     Size    File system  Name     Flags
+ 1      1049kB  6001GB  6001GB               primary  raid
+
+(parted) quit
+Information: You may need to update /etc/fstab.
+```
+
+
+```sh 
+$ sudo lsblk /dev/sdb 
+$ sudo mdadm --manage --add /dev/md127 /dev/sdb1
+```
+
+devrait se terminer jeudi 24 juillet à 2h
