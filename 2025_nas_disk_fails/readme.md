@@ -14,7 +14,7 @@ Nouveaux disques de gauche à droite :
 
 1. /dev/sdf1 : ST6000VN006 - ZVX063KJ 
 2. /dev/sdb1 : ST6000VN006 - ZVY08NE7
-3. /dev/sdc1 
+3. /dev/sdc1 : ST6000VN006-2ZM186 - ZVY08N5T
 4. /dev/sde1 : ST6000VN006-2ZM1 - WPR03GWY
 
 Tous des Seagate ironwolf 6To achetés en 2025
@@ -66,10 +66,10 @@ Seagate ironwolf 6To sur amazon: 165.99€ [facture](./facture_seagate_ironwolf_
 ### Etapes 
 
 - [x] Ecran, clavier
-- [ ] retirer du raid 
-- [ ] Démonter identifier
-- [ ] Remplacer le bon 
-- [ ] réassembler le raid
+- [x] retirer du raid 
+- [x] Démonter identifier
+- [x] Remplacer le bon 
+- [x] réassembler le raid
 
 ports de gauche à droite
 
@@ -269,7 +269,7 @@ unused devices: <none>
 
 devrait être fini vers 11h dimanche
 
-## Améliorer le raid 
+## Étape 2 : Remplacer les autres disques par des 6To
 
 Une fois l'ajout terminé,
 
@@ -279,12 +279,12 @@ Une fois l'ajout terminé,
 
 Devrait prendre 3x1000m = 3000m = 54h = ~3 jours
 
-## Et ça fonctionne.
+### Et ça fonctionne.
 
 Tout semble okay.
 
 
-## Autres disques 
+### Autres disques 
 
 4. port 4: WD30EFRX-68EUZN0 WCC4N0FVSTDL -> /dev/sde
 
@@ -353,4 +353,42 @@ $ sudo lsblk /dev/sdb
 $ sudo mdadm --manage --add /dev/md127 /dev/sdb1
 ```
 
-devrait se terminer jeudi 24 juillet à 2h
+3. /dev/sdc 
+
+```sh 
+$ sudo parted -a optimal /dev/sdc
+GNU Parted 3.5
+Using /dev/sdc
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+(parted) mklabel gpt
+(parted) mkpart primary 1 -1
+(parted) set 1 raid on
+(parted) print
+Model: ATA ST6000VN006-2ZM1 (scsi)
+Disk /dev/sdc: 6001GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+Disk Flags:
+
+Number  Start   End     Size    File system  Name     Flags
+ 1      1049kB  6001GB  6001GB               primary  raid
+
+(parted) quit
+Information: You may need to update /etc/fstab.
+```
+
+```sh 
+$ sudo lsblk /dev/sdc
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sdc      8:32   0  5.5T  0 disk
+└─sdc1   8:33   0  5.5T  0 part
+```
+
+```sh 
+$ sudo mdadm --manage --add /dev/md127 /dev/sdc1
+mdadm: added /dev/sdc1
+```
+
+Devrait se terminer à 3h du matin vendredi 25 juillet
+
+## Étape 3 : étendre le raid
