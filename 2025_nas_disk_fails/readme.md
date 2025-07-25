@@ -19,6 +19,8 @@ Nouveaux disques de gauche à droite :
 
 Tous des Seagate ironwolf 6To achetés en 2025
 
+---
+
 ## Historique 
 
 Depuis 3 mois j'ai 5 erreurs rapportées par smartctrl
@@ -391,4 +393,34 @@ mdadm: added /dev/sdc1
 
 Devrait se terminer à 3h du matin vendredi 25 juillet
 
-## Étape 3 : étendre le raid
+
+## Étape 3 : Redimensionner le RAID
+
+Une fois que tous les disques ont été remplacés et que le RAID a été reconstruit, redimensionner le RAID
+
+Vérifier la taille actuelle du RAID :
+
+```sh 
+sudo mdadm --detail /dev/md127
+```
+
+Redimensionner le RAID :
+
+```sh 
+sudo mdadm --grow /dev/md127 --size=max
+```
+
+Redimensionner le système de fichiers :
+
+Si vous utilisez un système de fichiers comme ext4, vous pouvez utiliser la commande suivante pour redimensionner le système de fichiers :
+
+Intégrité et resize
+
+```sh 
+sudo e2fsck -f /dev/md127
+sudo resize2fs /dev/md127
+```
+            
+## Et c'est terminé...
+
+Le NAS est entièrement remplacé et fonctionnel
