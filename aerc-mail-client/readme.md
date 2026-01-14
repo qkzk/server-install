@@ -1,3 +1,12 @@
+---
+title: AERC - Client mail
+subtitle: Cheatsheet
+author: qkzk + chatGPT
+date: 2026-01-14
+theme: metropolis
+geometry: "margin=1.5cm"
+
+---
 # aerc – Cheatsheet d’usage courant
 
 ## Principes généraux
