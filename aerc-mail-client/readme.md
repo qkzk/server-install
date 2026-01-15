@@ -9,6 +9,11 @@ geometry: "margin=1.5cm"
 ---
 # aerc – Cheatsheet d’usage courant
 
+## Sources
+
+[Blog](https://bence.ferdinandy.com/2023/07/20/email-in-the-terminal-a-complete-guide-to-the-unix-way-of-email/)
+
+
 ## Principes généraux
 
 * aerc est **entièrement piloté au clavier**
@@ -28,6 +33,8 @@ geometry: "margin=1.5cm"
 | Page suivante / précédente | `Ctrl-d` / `Ctrl-u` |
 | Aller au premier message   | `gg`                |
 | Aller au dernier message   | `G`                 |
+| tab suivant                | `Ctrl-n`            |
+| tab précédent              | `Ctrl-p`            |
 
 ### Changer de dossier
 
